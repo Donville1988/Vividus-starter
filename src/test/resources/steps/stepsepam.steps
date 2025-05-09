@@ -1,0 +1,54 @@
+Meta:
+@scope web
+
+Steps:
+Given I open EPAM homepage
+|url            |
+|https://epam.com|
+
+Then the title should be "$title"
+|title                                             |
+|EPAM | Software Engineering & Product Development Services|
+
+When I click theme toggle
+|element         |
+|.theme-toggle   |
+
+When I switch language to Ukrainian
+|element        |
+|.language-menu |
+
+When I scroll to page bottom
+|action       |
+|scrollBottom |
+
+Then I should see policies:
+|policyText               |
+|INVESTORS               |
+|COOKIE POLICY           |
+|OPEN SOURCE             |
+|APPLICANT PRIVACY NOTICE|
+|PRIVACY POLICY          |
+|WEB ACCESSIBILITY       |
+
+When I scroll to "$sectionName"
+|sectionName   |
+|Our Locations|
+
+Then I should see regions:
+|regionName |
+|AMERICAS   |
+|EMEA       |
+|APAC       |
+
+When I search for "$query"
+|query |element      |
+|AI    |.search-field|
+
+Given I open "$url"
+|url                     |
+|https://www.epam.com/about|
+
+When I click EPAM logo
+|element    |
+|.main-logo|
